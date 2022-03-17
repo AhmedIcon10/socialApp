@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unnecessary_null_comparison, use_key_in_widget_constructors
+
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
