@@ -38,6 +38,8 @@ class SocialRegisterCubit extends Cubit<SocialRegisterStates> {
       email: email,
       phone: phone,
       uId: uId,
+      image: 'https://img.freepik.com/free-vector/cute-panda-drink-boba-milk-tea-with-skateboard-cartoon-vector-icon-illustration-animal-drink-icon_138676-4371.jpg?t=st=1647644684~exp=1647645284~hmac=42a1cdc3decebd9cf180e34f772cceaf41f9414d6dcbdef9447a8469a37be90b&w=740',
+      bio: 'write your bio ...',
       isEmailVerified: false,
     );
     FirebaseFirestore.instance.collection('users').doc(uId).set(model.toMap())

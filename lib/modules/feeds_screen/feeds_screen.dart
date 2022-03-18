@@ -259,7 +259,7 @@ Widget buildPostItem(context)=>Card(
               NetworkImage(
                   'https://img.freepik.com/free-vector/realistic-ramadan-horizontal-banner-template_52683-82453.jpg?t=st=1647631459~exp=1647632059~hmac=01c0d89b9663ffa0f034a5b5938e6f8c08c3cb9f013db69f16a97a31c4e1666a&w=1060'
               ),
-              radius: 20,
+              radius: 18,
 
             ),
             SizedBox(
