@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:socialapp/modules/login_screen/login_screen.dart';
 import 'package:socialapp/shared/constants.dart';
+import 'package:socialapp/shared/network/local/cache_helper.dart';
 
 
 void navigateTo(context, widget) => Navigator.push(
@@ -118,12 +120,12 @@ Color chooseToastColor(ToastsStates state){
   }
   return color;
 }
-//void signOut(context)=>
-//    CacheHelper.removeData(key: 'token').then((value) {
-//  if(value){
-//    navigateAndFinish(context, const LoginScreen());
-//  }
-//});
+void signOut(context)=>
+    CacheHelper.removeData(key: 'token').then((value) {
+  if(value){
+    navigateAndFinish(context, SocialLoginScreen());
+  }
+});
 void printAllMessage(String text){
   final pattern = RegExp('.{1, 800}');
   pattern.allMatches(text).forEach((element) {print(element.group(0));});

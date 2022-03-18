@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 
-class ChatScreen extends StatelessWidget {
+class EditScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children:
       [
-        Center(child: Text('Chat Screen'))
+        Center(child: Text('Edit Screen'))
       ],
     );
   }

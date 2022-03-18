@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_null_comparison, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_null_comparison, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,40 +14,59 @@ class SocialLayout extends StatelessWidget {
     return BlocConsumer<AppCubit,AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(title: Text('News feed'),),
-          body: ConditionalBuilder(
-            condition: AppCubit.get(context).model! != null,
-            builder: (context){
-              return Column(
-                children: [
-                  if(!AppCubit.get(context).model!.isEmailVerified!)
-                  Container(
-                    color: Colors.amber.withOpacity(.65),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.warning),
-                          const SizedBox(width: 10,),
-                          const Text('please verify your email'),
-                          const Spacer(),
-                          defaultTextButton(onPressed: (){
-                            FirebaseAuth.instance.currentUser!.sendEmailVerification()
-                                .then((value) {
-                                  showToast(text: 'check your mail', state: ToastsStates.SUCCESS);
-                            })
-                                .catchError((error){});
-                          }, text: 'Verify'),
-                        ],
-                      ),
-                    ),
+        return BlocConsumer<AppCubit, AppStates>(
+          listener: (context, state){},
+          builder: (context, state){
+            var cubit = AppCubit.get(context);
+            return Scaffold(
+              appBar: AppBar(
+                  title: Text(
+                      cubit.appBarTitles[cubit.currentIndex]
+                  ),
+                actions:
+                [
+                  IconButton(onPressed: ()
+                  {
+                    signOut(context);
+                  },
+                      icon: Icon(Icons.logout),
                   ),
                 ],
-              );
-            },
-            fallback: (context)=> const Center(child: CircularProgressIndicator(),),
-          )
+              ),
+              body: cubit.screens[cubit.currentIndex],
+              bottomNavigationBar: BottomNavigationBar(
+                items:
+                [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Feeds'
+                  ),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.chat),
+                      label: 'Chat'
+                  ),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.people),
+                      label: 'Users'
+                  ),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.settings),
+                      label: 'Settings'
+                  ),
+                ],
+                onTap: (index)
+                {
+                  cubit.changeBottomNavBar(index);
+                },
+                selectedItemColor: Colors.blue,
+                unselectedItemColor: Colors.grey,
+                currentIndex: cubit.currentIndex,
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: Colors.white,
+                elevation: 2.0,
+              ),
+            );
+          },
         );
       },
     
