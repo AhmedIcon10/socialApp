@@ -51,7 +51,7 @@ Widget buildPostItem(context)=>Card(
             CircleAvatar(
               backgroundImage:
               NetworkImage(
-                  'https://img.freepik.com/free-vector/realistic-ramadan-horizontal-banner-template_52683-82453.jpg?t=st=1647631459~exp=1647632059~hmac=01c0d89b9663ffa0f034a5b5938e6f8c08c3cb9f013db69f16a97a31c4e1666a&w=1060'
+                  'https://img.freepik.com/free-vector/cute-panda-drink-boba-milk-tea-with-skateboard-cartoon-vector-icon-illustration-animal-drink-icon_138676-4371.jpg?t=st=1647644684~exp=1647645284~hmac=42a1cdc3decebd9cf180e34f772cceaf41f9414d6dcbdef9447a8469a37be90b&w=740'
               ),
               radius: 25,
 
@@ -257,7 +257,7 @@ Widget buildPostItem(context)=>Card(
             CircleAvatar(
               backgroundImage:
               NetworkImage(
-                  'https://img.freepik.com/free-vector/realistic-ramadan-horizontal-banner-template_52683-82453.jpg?t=st=1647631459~exp=1647632059~hmac=01c0d89b9663ffa0f034a5b5938e6f8c08c3cb9f013db69f16a97a31c4e1666a&w=1060'
+                  'https://img.freepik.com/free-vector/cute-panda-drink-boba-milk-tea-with-skateboard-cartoon-vector-icon-illustration-animal-drink-icon_138676-4371.jpg?t=st=1647644684~exp=1647645284~hmac=42a1cdc3decebd9cf180e34f772cceaf41f9414d6dcbdef9447a8469a37be90b&w=740'
               ),
               radius: 18,
 

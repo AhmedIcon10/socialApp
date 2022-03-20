@@ -10,3 +10,16 @@ class GetUserErrorState extends AppStates{
 // change bottom nav bar state
 class ChangeBottomNavBarState extends AppStates{}
 // create user states
+// profileImage picked states
+class SocialProfileImagePickedSuccessState extends AppStates{}
+class SocialProfileImagePickedErrorState extends AppStates{}
+// coverImage picked states
+class SocialCoverImagePickedSuccessState extends AppStates{}
+class SocialCoverImagePickedErrorState extends AppStates{}
+// profileImage upload states
+class SocialUploadProfileImageSuccessState extends AppStates{}
+class SocialUploadProfileImageErrorState extends AppStates{}
+// coverImage upload states
+class SocialUploadCoverImageSuccessState extends AppStates{}
+class SocialUploadCoverImageErrorState extends AppStates{}
+class SocialUserUpdateErrorState extends AppStates{}
